@@ -8,7 +8,7 @@ serverSocket.bind(('', serverPort))
 serverSocket.listen(1)
 # Fill in end
 while True:
-    modified = 'Monday, 20 Mar 2023 02:07:52 GMT'  # Date webpage was last modified
+    modified = 'Mon, 20 Mar 2023 02:07:52 GMT'  # Date webpage was last modified
     modified_since = ''  # Default this value as blank to make the if statement later work.
 
     # Establish the connection
@@ -18,6 +18,7 @@ while True:
     try:
         # TCP packet size is 1500 bytes
         message = connectionSocket.recv(1500)  # Fill in start          #Fill in end
+        print(message)
 
         # Decode the request from the web browser as a string, so we can get If-Modified-Since to know if we need to
         # send 304 Not Modified or 200 OK.
