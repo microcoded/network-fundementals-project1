@@ -55,7 +55,7 @@ while True:
     except IOError:
         # Send response message for file not found
         # Fill in start
-        http = "HTTP/1.1 404 Not Found\r\nContent-Type: text/html; charset=UTF-8\r\nLast-Modified: {modified}\r\n"
+        http = f"HTTP/1.1 404 Not Found\r\nContent-Type: text/html; charset=UTF-8\r\nLast-Modified: {modified}\r\n"
         connectionSocket.send(http.encode('utf-8'))
         print("Sent:", http)
 
