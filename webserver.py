@@ -41,6 +41,7 @@ while True:
             http = f"HTTP/1.1 304 Not Modified\r\nDate: {formatdate(timeval=None, localtime=False, usegmt=True)}\r\nEtag: {etag}\r\nExpires: {expires}\r\nCache-Control: no-cache\r\nLast-Modified: {modified}\r\nContent-Length: {content_length}\r\n\r\n"
             connectionSocket.send(http.encode('utf-8'))
             print("Sent:", http.encode())
+            connectionSocket.close()
         else:
             # Send webpage and 200 OK
 
