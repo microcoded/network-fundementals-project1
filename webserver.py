@@ -3,7 +3,7 @@ from socket import *
 from email.utils import formatdate # use for formatting current date
 
 serverSocket = socket(AF_INET, SOCK_STREAM)
-serverPort = 80  # HTTP port
+serverPort = 81  # HTTP port
 # Fill in start
 serverSocket.bind(('', serverPort))
 serverSocket.listen(1)
@@ -58,8 +58,8 @@ while True:
             print("Sent:", http.encode())
             # Fill in end
             # Send the content of the requested file to the client
-            for i in range(0, len(outputdata)):
-                connectionSocket.send(outputdata[i].encode())
+          #  for i in range(0, len(outputdata)):
+            connectionSocket.send(outputdata.encode())
             connectionSocket.send("\r\n".encode())
             connectionSocket.close()
     except IOError:
